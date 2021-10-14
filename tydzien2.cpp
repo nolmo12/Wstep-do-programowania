@@ -1,6 +1,6 @@
 #include "pch.h"
 #include <iostream>
-
+#include <vector>
 int suma(int a, int b)
 {
 	return a+b;
@@ -20,15 +20,18 @@ int main()
 	wypisz(a);
 	int d = suma(10, a);
 	wypisz(d);
-	int b;
-	std::cout << "Podaj liczbe calkowita \n";
-	std::cin >> b;
+	int b = 15;
+//	std::cout << "Podaj liczbe calkowita \n";
+//	std::cin >> b;
 	if (a > b)
 	{
 		wypisz(a);
 	}
 	else
 	{
-		std::cout << "Ale lipa!!!";
+		std::cout << "Ale lipa!!!\n";
 	}
+	std::vector<int>tab;
+	tab.push_back(5);
+	wypisz(tab[0]);
 }
