@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-#include "nauka.h"
 
 void wypisz(int a)
 {
