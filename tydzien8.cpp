@@ -146,3 +146,5 @@ int main()
 		std::cout << "Nie nalezy klucz\n";
 	}
 }
+//Stwierdzić, czy dana tablica jest palindronem
+//https://potyczki.mimuw.edu.pl/
