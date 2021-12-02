@@ -16,15 +16,6 @@ void wypisz(std::vector<int>tab)
 	}
 }
 
-void wypisz(std::vector<std::vector<int>>tab)
-{
-	for (int i = 0; i < tab[0].size(); i++)
-	{
-		std::cout << tab[0][i] << " ";
-		std::cout << tab[1][i] << " ";
-	}
-}
-
 bool czyNalezy(std::vector<int>tab, int element)
 {
 	for (int i = 0; i < tab.size(); i++)
@@ -90,29 +81,6 @@ std::vector<int>unikalnosc(std::vector<int>tab)
 			wynik.push_back(tab[i]);
 		}
 	}
-	return wynik;
-}
-
-std::vector<std::vector<int>>czestotliwosc(std::vector<int>tab)
-{
-	int licznik=0;
-	std::vector<std::vector<int>>wynik;
-	std::vector<int>liczby=unikalnosc(tab);
-	std::vector<int>ileLiczb;
-	int element;
-	for (int i=0;i<liczby.size();i++)
-	{
-		element = liczby[i];
-		for (int j = 0; j < tab.size(); j++)
-			if (element == tab[j])
-			{
-				licznik++;
-			}
-		ileLiczb.push_back(licznik);
-			licznik=0;
-	}
-	wynik.push_back(liczby);
-	wynik.push_back(ileLiczb);
 	return wynik;
 }
 
