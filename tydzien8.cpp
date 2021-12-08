@@ -1,11 +1,10 @@
-#include "pch.h"
 #include <iostream>
 #include <vector>
 #include<map>
 
 void wypisz(int w)
 {
-	std::cout << w<<"\n";
+	std::cout << w << "\n";
 }
 
 void wypisz(std::vector<int>tab)
@@ -13,6 +12,14 @@ void wypisz(std::vector<int>tab)
 	for (int i = 0; i < tab.size(); i++)
 	{
 		std::cout << tab[i] << " ";
+	}
+}
+
+void wypisz(std::map<int, int>mapa)
+{
+	for (auto const& pair : mapa)
+	{
+		std::cout << pair.first << ": " << pair.second << "\n";
 	}
 }
 
@@ -91,11 +98,11 @@ std::map<int, int>czestosc(std::vector<int>tab)
 	{
 		if (!czyNalezyKlucz(wynik, tab[i]))
 		{
-			wynik.insert({tab[i], 1})
+			wynik.insert({ tab[i], 1 });
 		}
 		else
 		{
-		wynik[tab[i]]++;
+			wynik[tab[i]]++;
 		}
 	}
 	return wynik;
@@ -110,8 +117,6 @@ int main()
 	wypisz(tab);
 	std::cout << "\n";
 	wypisz(unikalnosc(tab));
-	std::cout << "\n";
-	wypisz(czestotliwosc(tab));
 	std::cout << "\n";
 	wypisz(w);
 	wypisz(min(tab));
@@ -145,6 +150,5 @@ int main()
 	{
 		std::cout << "Nie nalezy klucz\n";
 	}
+	wypisz(czestosc(tab));
 }
-//Stwierdzić, czy dana tablica jest palindronem
-//https://potyczki.mimuw.edu.pl/
