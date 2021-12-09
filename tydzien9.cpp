@@ -202,6 +202,4 @@ int main()
 	std::cout << "\n";
 	wypisz(losowyWektor(5, 5,10));
 	std::cout << "\n";
-	wypisz(podzielnosc_bezModulo(tab4, 3));
-	std::cout << "\n";
 }
