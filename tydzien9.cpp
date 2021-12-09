@@ -1,4 +1,3 @@
-#include "pch.h"
 #include <iostream>
 #include <vector>
 #include<map>
@@ -117,7 +116,7 @@ bool palindrom(std::vector<int>tab)
 	int koniec = tab.size() - 1;
 	for (int i = 0; i < tab.size() / 2; i++)
 	{
-		if (tab[i] != tab[koniec-i])
+		if (tab[i] != tab[koniec - i])
 		{
 			return false;
 		}
@@ -138,15 +137,31 @@ std::vector<int>podzielnosc(std::vector<int>tab, int dzielnik)
 	return wynik;
 }
 
-std::vector<int>losowyWektor(int dlugosc, int min, int max)
+std::vector<int>losowyWektor(int dlugosc, int min=0, int max=50)
 {
 	std::vector<int>wynik;
 	for (int i = 0; i < dlugosc; i++)
 	{
-		wynik.push_back(rand()%(max-min+1)+min);
+		wynik.push_back(rand() % (max - min + 1) + min);
 	}
 	return wynik;
 }
+
+std::vector<int>podzielnosc_bezModulo(std::vector<int>tab, int dzielnik)
+{
+	int dzielona = 0;
+	std::vector<int>wynik;
+	for (int i = 0; i < tab.size(); i++)
+	{
+		dzielona = tab[i] / dzielnik;
+		if (dzielona * dzielnik == tab[i])
+		{
+			wynik.push_back(tab[i]);
+		}
+	}
+	return wynik;
+}
+
 
 int main()
 {
@@ -200,6 +215,8 @@ int main()
 	std::cout << "\n";
 	wypisz(podzielnosc(tab4, 3));
 	std::cout << "\n";
-	wypisz(losowyWektor(5, 5,10));
+	wypisz(losowyWektor(5, 5, 10));
+	std::cout << "\n";
+	wypisz(podzielnosc_bezModulo(tab4, 3));
 	std::cout << "\n";
 }
