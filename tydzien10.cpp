@@ -1,4 +1,3 @@
-#include "pch.h"
 #include <iostream>
 #include <vector>
 #include <map>
@@ -145,7 +144,7 @@ std::vector<int>generuj(int dlugosc = 10, int min = 0, int max = 50)
 	return wynik;
 }
 
-void linia(int wielkosc=5)
+void linia(int wielkosc = 5)
 {
 	for (int i = 0; i < wielkosc; i++)
 	{
@@ -154,7 +153,7 @@ void linia(int wielkosc=5)
 }
 void schodki(int wielkosc = 5)
 {
-	for (int i = 0; i <=wielkosc; i++)
+	for (int i = 0; i <= wielkosc; i++)
 	{
 		for (int j = 0; j < i; j++)
 		{
@@ -164,10 +163,59 @@ void schodki(int wielkosc = 5)
 	}
 }
 
+void choinka(int wysokosc = 5, int wysokoscPnia = 2)
+{
+	int licznik = 0;
+	int srodek = 0;
+	int gruboscPnia=wysokosc/10;
+	int podstawa = wysokoscPnia / 5;
+	for (int i=wysokosc;i!=0;i--)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			std::cout << " ";
+		}
+		for (int k = i; k<=wysokosc+licznik; k++)
+		{
+			std::cout << "*";
+		}
+		licznik++;
+		std::cout << "\n";
+	}
+	srodek = (wysokosc + licznik) / 2;
+	licznik = 0;
+	for(int i=0;i<wysokoscPnia-podstawa;i++)
+	{
+		for (int j = 0; j < srodek; j++)
+		{
+			std::cout << " ";
+		}
+		for (int k = 0; k < gruboscPnia; k++)
+		{
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+	licznik = gruboscPnia * 3;
+	for (int i = 0; i <podstawa; i++)
+	{
+		for (int j = 0; j < srodek - podstawa; j++)
+		{
+			std::cout << " ";
+		}
+		for (int l = 0; l < licznik; l++)
+		{
+			std::cout << "*";
+		}
+		std::cout << "\n";
+	}
+}
+
+
 int main()
 {
 	std::vector<int>tab = { 1,1,2,2,3,3,4,4,4,9 };
-	std::vector<int>tab2 = { 1,1,2,2};
+	std::vector<int>tab2 = { 1,1,2,2 };
 	std::map<int, int>mapa;
 	mapa.insert({ 1, 2 });
 	mapa.insert({ 2, 4 });
@@ -187,7 +235,7 @@ int main()
 		std::cout << "tak\n";
 	else
 		std::cout << "nie \n";
-	if(czyNalezyKlucz(mapa, 1))
+	if (czyNalezyKlucz(mapa, 1))
 		std::cout << "tak\n";
 	else
 		std::cout << "nie\n";
@@ -195,18 +243,19 @@ int main()
 		std::cout << "tak\n";
 	else
 		std::cout << "nie\n";
-	if(palindrom(tab2))
+	if (palindrom(tab2))
 		std::cout << "tak\n";
 	else
 		std::cout << "nie\n";
-	int a,b;
-	std::cout << "Podaj dlugosc wektora\n";
-	std::cin >> a;
-	std::vector<int>wygenerowany=generuj(a);
-	wypisz(podzielnosc(wygenerowany, 7));
+	int a, b;
+	//std::cout << "Podaj dlugosc wektora\n";
+	//std::cin >> a;
+	//std::vector<int>wygenerowany = generuj(a);
+	//wypisz(podzielnosc(wygenerowany, 7));
 	std::cout << "Podaj dlugosc lini\n";
 	std::cin >> b;
 	linia(b);
 	schodki(b);
+	choinka(10, 5);
 	std::cout << "\n";
 }
